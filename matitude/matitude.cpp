@@ -24,18 +24,29 @@ void findsSection(int& sizeOfMultitudeA, int& sizeOfMultitudeB, int* multitudeA,
 	}
 }
 
-bool mainMenu(int& sizeOfMultitudeA, int& sizeOfMultitudeB, int* multitudeA, int* multitudeB)
+bool mainMenu(int& sizeOfMultitudeA, int& sizeOfMultitudeB, int* multitudeA, int* multitudeB,int& multitudeCount)
 {
 	cout << endl;
-	cout << "1. Enter multitude A and multitude B" << endl;
-	cout << "2. Section of two multitudes" << endl;
-	cout << "3. Unification of two multitudes" << endl;
-	cout << "4. Symetrical difference between two multitudes" << endl;
-	cout << "5. Difference between two multitudes" << endl;
-	cout << "6. Show if multitude A is a submultitude B " << endl;
-	cout << "7. Show if multitude A is equal to multitude B" << endl;
-	cout << "8. Show if multitude A have something it common with multitude B " << endl;
-	cout << "0. EXIT" << endl;
+	if (multitudeCount == 0)
+	{
+		cout << "1. Enter multitude A and multitude B" << endl;
+		cout << endl;
+		cout << "0. EXIT" << endl;
+		cout << endl;
+		cout << endl;
+	}
+	else
+	{
+		cout << "1. Enter multitude A and multitude B" << endl;
+		cout << "2. Section of two multitudes" << endl;
+		cout << "3. Unification of two multitudes" << endl;
+		cout << "4. Symetrical difference between two multitudes" << endl;
+		cout << "5. Difference between two multitudes" << endl;
+		cout << "6. Show if multitude A is a submultitude B " << endl;
+		cout << "7. Show if multitude A is equal to multitude B" << endl;
+		cout << "8. Show if multitude A have something it common with multitude B " << endl;
+		cout << "0. EXIT" << endl << endl;
+	}
 
 	int option;
 	cin >> option;
@@ -46,7 +57,7 @@ bool mainMenu(int& sizeOfMultitudeA, int& sizeOfMultitudeB, int* multitudeA, int
 		return false;
 		break;
 	case 1:
-
+		cout << "Please enter the both multitudes: " << endl;
 		return true;
 		break;
 	case 2:
@@ -72,6 +83,7 @@ bool mainMenu(int& sizeOfMultitudeA, int& sizeOfMultitudeB, int* multitudeA, int
 		return true;
 		break;
 	}
+	cout << "Please enter the option you'd like to use: ";
 }
 	
 
@@ -79,9 +91,11 @@ int main()
 {
 	int sizeOfMultitudeA, sizeOfMultitudeB;
 	int* multitudeA, *multitudeB;
+	int multitudeCount = 0;
 	bool exit = true;
 	greeting();
-	 cin >> sizeOfMultitudeA;
+	mainMenu(sizeOfMultitudeA, sizeOfMultitudeB, multitudeA, multitudeB, multitudeCount);
+	cin >> sizeOfMultitudeA;
 	multitudeA = new int[sizeOfMultitudeA];
 
 	for (int i = 0; i < sizeOfMultitudeA; i++)
