@@ -3,7 +3,22 @@
 
 using namespace std;
 
-bool mainMenu()
+void findsSection(int& sizeOfMaltitudeA, int& sizeOfMaltitudeB, int& maltitudeA, int& maltitudeB) {
+	for (int i = 0; i < sizeOfMaltitudeA; i++)
+	{
+		for (int j = 0, j < sizeOfMaltitudeB; i++)
+		{
+			if (maltitudeA[i] == maltitudeB[j])
+			{
+				cout << "There is section in " << i << " position from maltitudeA and in " << j << " position from maltitudeB"
+				cout << endl;
+				cout<<"The Section is "<<maltitudeA[i]
+			}
+		}
+	}
+}
+
+bool mainMenu(int& sizeOfMaltitudeA, int& sizeOfMaltitudeB, int& maltitudeA, int& maltitudeB)
 {
 	
 
@@ -25,6 +40,7 @@ bool mainMenu()
 		return false;
 		break;
 	case 1:
+		findsSection(sizeOfMaltitudeA, sizeOfMaltitudeB, maltitudeA, maltitudeB);
 		return true;
 		break;
 	case 2:
@@ -75,7 +91,7 @@ int main()
 	delete[]maltitudeB;
 	do {
 
-		exit = mainMenu();
+		exit = mainMenu(sizeOfMaltitudeA,sizeOfMaltitudeB,maltitudeA,maltitudeB);
 	} while (exit != false);
 
 }
