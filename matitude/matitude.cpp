@@ -1,27 +1,25 @@
 #include <iostream>
 #include <cmath>
-
 using namespace std;
 
-void findsSection(int& sizeOfMaltitudeA, int& sizeOfMaltitudeB, int& maltitudeA, int& maltitudeB) {
-	for (int i = 0; i < sizeOfMaltitudeA; i++)
+void findsSection(int& sizeOfMultitudeA, int& sizeOfMultitudeB, int* multitudeA, int* multitudeB) {
+	for (int i = 0; i < sizeOfMultitudeA; i++)
 	{
-		for (int j = 0, j < sizeOfMaltitudeB; i++)
+		for (int j = 0; j < sizeOfMultitudeB; j++)
 		{
-			if (maltitudeA[i] == maltitudeB[j])
+			if (multitudeA[i] == multitudeB[j])
 			{
-				cout << "There is section in " << i << " position from maltitudeA and in " << j << " position from maltitudeB"
+				cout << "There is section in " << i << " position from multitudeA and in " << j << " position from multitudeB";
 				cout << endl;
-				cout<<"The Section is "<<maltitudeA[i]
+				cout << "The Section is " << multitudeA[i];
 			}
 		}
 	}
 }
 
-bool mainMenu(int& sizeOfMaltitudeA, int& sizeOfMaltitudeB, int& maltitudeA, int& maltitudeB)
+bool mainMenu(int& sizeOfMultitudeA, int& sizeOfMultitudeB, int* multitudeA, int* multitudeB)
 {
-	
-
+	cout << endl;
 	cout << "1. Section of two multitudes" << endl;
 	cout << "2. Unification of two multitudes" << endl;
 	cout << "3. Symetrical difference between two multitudes" << endl;
@@ -29,7 +27,7 @@ bool mainMenu(int& sizeOfMaltitudeA, int& sizeOfMaltitudeB, int& maltitudeA, int
 	cout << "5. Show if multitude A is a submultitude B " << endl;
 	cout << "6. Show if multitude A is equal to multitude B" << endl;
 	cout << "7. Show if multitude A have something it common with multitude B " << endl;
-	cout << "0. EXIT" << endl; cout << "nie rabotim";
+	cout << "0. EXIT" << endl;
 
 	int option;
 	cin >> option;
@@ -40,7 +38,7 @@ bool mainMenu(int& sizeOfMaltitudeA, int& sizeOfMaltitudeB, int& maltitudeA, int
 		return false;
 		break;
 	case 1:
-		findsSection(sizeOfMaltitudeA, sizeOfMaltitudeB, maltitudeA, maltitudeB);
+		findsSection(sizeOfMultitudeA, sizeOfMultitudeB, multitudeA, multitudeB);
 		return true;
 		break;
 	case 2:
@@ -67,31 +65,33 @@ bool mainMenu(int& sizeOfMaltitudeA, int& sizeOfMaltitudeB, int& maltitudeA, int
 
 int main()
 {
-	int sizeOfMaltitudeA, sizeOfMaltitudeB;
-	int* maltitudeA, * maltitudeB;
+	int sizeOfMultitudeA, sizeOfMultitudeB;
+	int* multitudeA, *multitudeB;
 	bool exit = true;
-	cin >> sizeOfMaltitudeA;
-	maltitudeA = new int[sizeOfMaltitudeA];
-	for (int i = 0; i < sizeOfMaltitudeA; i++)
-	{
-		cin >> maltitudeA[i];
-	}
-	cin >> sizeOfMaltitudeB;
-	maltitudeB = new int[sizeOfMaltitudeB];
+	cin >> sizeOfMultitudeA;
+	multitudeA = new int[sizeOfMultitudeA];
 
-	for (int i = 0; i < sizeOfMaltitudeB; i++)
+	for (int i = 0; i < sizeOfMultitudeA; i++)
 	{
-		cin >> maltitudeB[i];
+		cin >> multitudeA[i];
 	}
-	for (int i = 0; i < sizeOfMaltitudeB; i++)
+
+	cin >> sizeOfMultitudeB;
+	multitudeB = new int[sizeOfMultitudeB];
+
+	for (int i = 0; i < sizeOfMultitudeB; i++)
 	{
-		cout << maltitudeB[i] << " " << maltitudeA[i] << " ";
+		cin >> multitudeB[i];
 	}
-	delete[]maltitudeA;
-	delete[]maltitudeB;
+	for (int i = 0; i < sizeOfMultitudeB; i++)
+	{
+		cout << multitudeB[i] << " " << multitudeA[i] << " ";
+	}
+	delete[]multitudeA;
+	delete[]multitudeB;
 	do {
 
-		exit = mainMenu(sizeOfMaltitudeA,sizeOfMaltitudeB,maltitudeA,maltitudeB);
+		exit = mainMenu(sizeOfMultitudeA,sizeOfMultitudeB,multitudeA,multitudeB);
 	} while (exit != false);
 
 }
