@@ -2,6 +2,13 @@
 #include <cmath>
 using namespace std;
 
+void greeting()
+{
+	cout << "Welcome to our program! " << endl;
+
+}
+
+
 void findsSection(int& sizeOfMultitudeA, int& sizeOfMultitudeB, int* multitudeA, int* multitudeB) {
 	for (int i = 0; i < sizeOfMultitudeA; i++)
 	{
@@ -20,13 +27,14 @@ void findsSection(int& sizeOfMultitudeA, int& sizeOfMultitudeB, int* multitudeA,
 bool mainMenu(int& sizeOfMultitudeA, int& sizeOfMultitudeB, int* multitudeA, int* multitudeB)
 {
 	cout << endl;
-	cout << "1. Section of two multitudes" << endl;
-	cout << "2. Unification of two multitudes" << endl;
-	cout << "3. Symetrical difference between two multitudes" << endl;
-	cout << "4. Difference between two multitudes" << endl;
-	cout << "5. Show if multitude A is a submultitude B " << endl;
-	cout << "6. Show if multitude A is equal to multitude B" << endl;
-	cout << "7. Show if multitude A have something it common with multitude B " << endl;
+	cout << "1. Enter multitude A and multitude B" << endl;
+	cout << "2. Section of two multitudes" << endl;
+	cout << "3. Unification of two multitudes" << endl;
+	cout << "4. Symetrical difference between two multitudes" << endl;
+	cout << "5. Difference between two multitudes" << endl;
+	cout << "6. Show if multitude A is a submultitude B " << endl;
+	cout << "7. Show if multitude A is equal to multitude B" << endl;
+	cout << "8. Show if multitude A have something it common with multitude B " << endl;
 	cout << "0. EXIT" << endl;
 
 	int option;
@@ -38,10 +46,11 @@ bool mainMenu(int& sizeOfMultitudeA, int& sizeOfMultitudeB, int* multitudeA, int
 		return false;
 		break;
 	case 1:
-		findsSection(sizeOfMultitudeA, sizeOfMultitudeB, multitudeA, multitudeB);
+
 		return true;
 		break;
 	case 2:
+		findsSection(sizeOfMultitudeA, sizeOfMultitudeB, multitudeA, multitudeB);
 		return true;
 		break;
 	case 3:
@@ -59,6 +68,9 @@ bool mainMenu(int& sizeOfMultitudeA, int& sizeOfMultitudeB, int* multitudeA, int
 	case 7:
 		return true;
 		break;
+	case 8:
+		return true;
+		break;
 	}
 }
 	
@@ -68,7 +80,8 @@ int main()
 	int sizeOfMultitudeA, sizeOfMultitudeB;
 	int* multitudeA, *multitudeB;
 	bool exit = true;
-	cin >> sizeOfMultitudeA;
+	greeting();
+	 cin >> sizeOfMultitudeA;
 	multitudeA = new int[sizeOfMultitudeA];
 
 	for (int i = 0; i < sizeOfMultitudeA; i++)
