@@ -2,14 +2,7 @@
 #include <cmath>
 using namespace std;
 
-void greeting()
-{
-	cout << "Welcome to our program! " << endl;
-
-}
-
-
-void findsSection(int& sizeOfMultitudeA, int& sizeOfMultitudeB, int* multitudeA, int* multitudeB) {
+void findsSection(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA, int multitudeB) {
 	for (int i = 0; i < sizeOfMultitudeA; i++)
 	{
 		for (int j = 0; j < sizeOfMultitudeB; j++)
@@ -24,17 +17,9 @@ void findsSection(int& sizeOfMultitudeA, int& sizeOfMultitudeB, int* multitudeA,
 	}
 }
 
-bool mainMenu(int& sizeOfMultitudeA, int& sizeOfMultitudeB, int* multitudeA, int* multitudeB,int& multitudeCount)
+bool mainMenu(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA, int multitudeB)
 {
 	cout << endl;
-	if (multitudeCount == 0)
-	{
-		cout << "1. Enter multitude A and multitude B" << endl;
-		cout << endl;
-		cout << "0. EXIT" << endl;
-		cout << endl;
-		cout << endl;
-	}
 	else
 	{
 		cout << "1. Enter multitude A and multitude B" << endl;
@@ -49,6 +34,7 @@ bool mainMenu(int& sizeOfMultitudeA, int& sizeOfMultitudeB, int* multitudeA, int
 	}
 
 	int option;
+	cout << "Please enter the option you'd like to use: ";
 	cin >> option;
 
 	switch (option)
@@ -83,42 +69,37 @@ bool mainMenu(int& sizeOfMultitudeA, int& sizeOfMultitudeB, int* multitudeA, int
 		return true;
 		break;
 	}
-	cout << "Please enter the option you'd like to use: ";
 }
 	
 
 int main()
 {
 	int sizeOfMultitudeA, sizeOfMultitudeB;
-	int* multitudeA, *multitudeB;
-	int multitudeCount = 0;
+	int *multitudeA, *multitudeB;
 	bool exit = true;
-	greeting();
-	mainMenu(sizeOfMultitudeA, sizeOfMultitudeB, multitudeA, multitudeB, multitudeCount);
+	cout << "Enter size of maltitude A: ";
 	cin >> sizeOfMultitudeA;
-	multitudeA = new int[sizeOfMultitudeA];
-
+	maltitudeA = new int[sizeOfMultitudeA];
+	cout << "Enter elements: ";
 	for (int i = 0; i < sizeOfMultitudeA; i++)
 	{
-		cin >> multitudeA[i];
+		cin >> maltitudeA[i];
 	}
 
+	cout << "Enter size of maltitude B: ";
 	cin >> sizeOfMultitudeB;
-	multitudeB = new int[sizeOfMultitudeB];
+	maltitudeB = new int[sizeOfMultitudeB];
+	cout << "Enter elements: ";
+	for (int i = 0; i < sizeOfMultitudeB; i++)
+	{
+		cin >> maltitudeB[i];
+	}
 
-	for (int i = 0; i < sizeOfMultitudeB; i++)
-	{
-		cin >> multitudeB[i];
-	}
-	for (int i = 0; i < sizeOfMultitudeB; i++)
-	{
-		cout << multitudeB[i] << " " << multitudeA[i] << " ";
-	}
+	do {
+		exit = mainMenu(sizeOfMultitudeA, sizeOfMultitudeB, multitudeA, multitudeB);
+	} while (exit != false);
+
 	delete[]multitudeA;
 	delete[]multitudeB;
-	do {
-
-		exit = mainMenu(sizeOfMultitudeA,sizeOfMultitudeB,multitudeA,multitudeB);
-	} while (exit != false);
 
 }
