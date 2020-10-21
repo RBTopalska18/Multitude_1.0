@@ -2,26 +2,44 @@
 #include <cmath>
 using namespace std;
 
-void findsSection(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA, int multitudeB) {
+int inputSize()
+{
+	int sizeOfMultitude;
+
+	cout << "Enter size of the multitude: ";
+
+	cin >> sizeOfMultitude;
+
+	cout << endl;
+
+	return sizeOfMultitude;
+}
+
+void findsSection(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA[], int multitudeB[]) {
+	cout << endl;
+	cout << "The section/s is/are: ";
+	int areThereAnySections = 0;
 	for (int i = 0; i < sizeOfMultitudeA; i++)
 	{
 		for (int j = 0; j < sizeOfMultitudeB; j++)
 		{
 			if (multitudeA[i] == multitudeB[j])
 			{
-				cout << "There is section in " << i << " position from multitudeA and in " << j << " position from multitudeB";
-				cout << endl;
-				cout << "The Section is " << multitudeA[i];
+				cout << multitudeA[i]<<" ";
+				areThereAnySections++;
 			}
 		}
 	}
+	if (areThereAnySections == 0)
+	{
+		cout << "There are no sections";
+	}
+	cout << endl;
 }
 
-bool mainMenu(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA, int multitudeB)
+bool mainMenu(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA[], int multitudeB[])
 {
 	cout << endl;
-	else
-	{
 		cout << "1. Enter multitude A and multitude B" << endl;
 		cout << "2. Section of two multitudes" << endl;
 		cout << "3. Unification of two multitudes" << endl;
@@ -31,7 +49,6 @@ bool mainMenu(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA, int mu
 		cout << "7. Show if multitude A is equal to multitude B" << endl;
 		cout << "8. Show if multitude A have something it common with multitude B " << endl;
 		cout << "0. EXIT" << endl << endl;
-	}
 
 	int option;
 	cout << "Please enter the option you'd like to use: ";
@@ -74,32 +91,18 @@ bool mainMenu(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA, int mu
 
 int main()
 {
-	int sizeOfMultitudeA, sizeOfMultitudeB;
-	int *multitudeA, *multitudeB;
+	int sizeOfMultitudeA, sizeOfMultitudeB, * multitudeA, * multitudeB;
 	bool exit = true;
-	cout << "Enter size of maltitude A: ";
-	cin >> sizeOfMultitudeA;
-	maltitudeA = new int[sizeOfMultitudeA];
-	cout << "Enter elements: ";
-	for (int i = 0; i < sizeOfMultitudeA; i++)
-	{
-		cin >> maltitudeA[i];
-	}
-
-	cout << "Enter size of maltitude B: ";
-	cin >> sizeOfMultitudeB;
-	maltitudeB = new int[sizeOfMultitudeB];
-	cout << "Enter elements: ";
-	for (int i = 0; i < sizeOfMultitudeB; i++)
-	{
-		cin >> maltitudeB[i];
-	}
-
-	do {
-		exit = mainMenu(sizeOfMultitudeA, sizeOfMultitudeB, multitudeA, multitudeB);
-	} while (exit != false);
-
+	sizeOfMultitudeA = inputSize();
+	multitudeA = new int[sizeOfMultitudeA];
+	cout << "Enter multitude elemts: ";
+	for (int i = 0; i < sizeOfMultitudeA; i++) { cin >> multitudeA[i]; }
+	cout << endl;
+	sizeOfMultitudeB = inputSize();
+	multitudeB = new int[sizeOfMultitudeB];
+	cout << "Enter multitude elemts: ";
+	for (int i = 0; i < sizeOfMultitudeA; i++) { cin >> multitudeB[i]; }
+	do {exit = mainMenu(sizeOfMultitudeA, sizeOfMultitudeB, multitudeA, multitudeB);} while (exit != false);
 	delete[]multitudeA;
 	delete[]multitudeB;
-
 }
