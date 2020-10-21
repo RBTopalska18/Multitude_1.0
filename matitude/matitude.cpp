@@ -15,10 +15,15 @@ int inputSize()
 	return sizeOfMultitude;
 }
 
-void findsSection(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA[], int multitudeB[]) {
+void findSection(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA[], int multitudeB[]) {
 	cout << endl;
 	cout << "The section/s is/are: ";
-	int areThereAnySections = 0;
+	int areThereAnySectionsInMultitudeA = 0;
+	int areThereAnySectionsInMultitudeB = 0;
+	int* indexOfTheSectionA;
+	int* indexOfTheSectionB;
+	int sectionNumber=0;
+
 	for (int i = 0; i < sizeOfMultitudeA; i++)
 	{
 		for (int j = 0; j < sizeOfMultitudeB; j++)
@@ -26,16 +31,86 @@ void findsSection(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA[], 
 			if (multitudeA[i] == multitudeB[j])
 			{
 				cout << multitudeA[i]<<" ";
-				areThereAnySections++;
+				areThereAnySectionsInMultitudeA++;
+				areThereAnySectionsInMultitudeB++;
 			}
 		}
 	}
-	if (areThereAnySections == 0)
+	if (areThereAnySectionsInMultitudeA == 0)
 	{
 		cout << "There are no sections";
 	}
+	else 
+	{
+		indexOfTheSectionA = new int[areThereAnySectionsInMultitudeA];
+		indexOfTheSectionB = new int[areThereAnySectionsInMultitudeB];
+		for (int i = 0; i < sizeOfMultitudeA; i++)
+		{
+			for (int j = 0; j < sizeOfMultitudeB; j++)
+			{
+				if (multitudeA[i] == multitudeB[j])
+				{
+					indexOfTheSectionA[sectionNumber] = i+1;
+					indexOfTheSectionB[sectionNumber] = j+1;
+					sectionNumber++;
+				}
+			}
+		}
+		cout << endl;
+		for (int i = 0; i < sectionNumber; i++)
+		{
+			cout << endl;
+			cout << "The sectoins are found on position " << indexOfTheSectionA[i] << " from multitude A" << endl;
+			cout << "The sectoins are found on position " << indexOfTheSectionB[i] << " from multitude B" << endl;
+		}
+	}
 	cout << endl;
 }
+
+
+
+void findUnification(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA[], int multitudeB[]) {
+	cout << endl;
+	int temp, count = 0, index = 0, sectionCount=0;
+	int* mergedArray;
+	for (int i = 0; i < sizeOfMultitudeA; i++)
+	{
+		for (int j = 0; j < sizeOfMultitudeB; j++)
+		{
+			if (multitudeA[i] == multitudeB[j])
+			{
+				sectionCount++;
+			}
+		}
+	}
+	mergedArray = new int[sizeOfMultitudeA + sizeOfMultitudeB - sectionCount];
+	for (int i = 0; i < sizeOfMultitudeA; i++)
+	{
+		for (int j = 0; j < sizeOfMultitudeB; j++)
+		{
+			if (multitudeA[i] == multitudeB[j])
+			{
+				temp = multitudeB[j];
+				multitudeB[j] = multitudeB[sizeOfMultitudeB - 1 - count];
+				multitudeB[sizeOfMultitudeB - 1 - count] = temp;
+				count++;
+			}
+		}
+		mergedArray[index++] = multitudeA[i];
+	}
+	for (int i = 0; i < sizeOfMultitudeB-count; i++)
+	{
+		mergedArray[index++] = multitudeB[i];
+	}
+	for (int i = 0; i < index; i++)
+	{
+		cout << mergedArray[i];
+	}
+
+}
+
+
+
 
 bool mainMenu(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA[], int multitudeB[])
 {
@@ -64,10 +139,11 @@ bool mainMenu(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA[], int 
 		return true;
 		break;
 	case 2:
-		findsSection(sizeOfMultitudeA, sizeOfMultitudeB, multitudeA, multitudeB);
+		findSection(sizeOfMultitudeA, sizeOfMultitudeB, multitudeA, multitudeB);
 		return true;
 		break;
 	case 3:
+		findUnification(sizeOfMultitudeA, sizeOfMultitudeB, multitudeA, multitudeB);
 		return true;
 		break;
 	case 4:
