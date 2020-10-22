@@ -109,6 +109,41 @@ void findUnion(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA[], int
 
 }
 
+void isASubMultitude(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA[], int multitudeB[]) {
+    int isASub = 0;
+    for (int i = 0; i < sizeOfMultitudeA; i++)
+    {
+        for (int j = 0; j < sizeOfMultitudeB; j++)
+        {
+            if (multitudeA[i] == multitudeB[j])
+            {
+                isASub++;
+            }
+        }
+    }
+    if (sizeOfMultitudeB == sizeOfMultitudeA && sizeOfMultitudeA == isASub)
+    {
+        cout << "The multitudes are equal";
+        cout << endl;
+    }
+    else if (isASub == sizeOfMultitudeB)
+    {
+        cout << "Multitude B is a sub multitude of a multitude A";
+        cout << endl;
+    }
+    else if (isASub == sizeOfMultitudeA)
+    {
+        cout << "Multitude A is a sub multitude of a multitude B";
+        cout << endl;
+    }
+    else
+    {
+        cout << "There are no sub multitudes";
+        cout << endl;
+    }
+}
+
+
 bool mainMenu(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA[], int multitudeB[])
 {
     cout << endl;
@@ -150,6 +185,7 @@ bool mainMenu(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA[], int 
         return true;
         break;
     case 6:
+        isASubMultitude(sizeOfMultitudeA, sizeOfMultitudeB, multitudeA, multitudeB);
         return true;
         break;
     case 7:
