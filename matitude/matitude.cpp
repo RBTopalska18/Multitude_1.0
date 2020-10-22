@@ -15,6 +15,15 @@ int inputSize()
     return sizeOfMultitude;
 }
 
+void inputMultitudeElements(int multitude[], int sizeOfMultitude)
+{
+    cout << "Enter the elements of multitude: ";
+    for (int i = 0; i < sizeOfMultitude; i++)
+    {
+        cin >> multitude[i];
+    }
+}
+
 void findIntersection(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA[], int multitudeB[]) {
     cout << endl;
     cout << "The intersection/s is/are: ";
@@ -204,13 +213,11 @@ int main()
     bool exit = true;
     sizeOfMultitudeA = inputSize();
     multitudeA = new int[sizeOfMultitudeA];
-    cout << "Enter the first multitude elements: ";
-    for (int i = 0; i < sizeOfMultitudeA; i++) { cin >> multitudeA[i]; }
+    inputMultitudeElements(multitudeA, sizeOfMultitudeA);
     cout << endl;
     sizeOfMultitudeB = sizeOfMultitudeA;
     multitudeB = new int[sizeOfMultitudeB];
-    cout << "Enter the second multitude elements: ";
-    for (int i = 0; i < sizeOfMultitudeA; i++) { cin >> multitudeB[i]; }
+    inputMultitudeElements(multitudeB, sizeOfMultitudeB);
     do { exit = mainMenu(sizeOfMultitudeA, sizeOfMultitudeB, multitudeA, multitudeB); } while (exit != false);
     delete[]multitudeA;
     delete[]multitudeB;
