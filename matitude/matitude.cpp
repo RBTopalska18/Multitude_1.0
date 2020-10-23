@@ -6,7 +6,7 @@ int inputSize()
 {
     int sizeOfMultitude;
 
-    cout << "Enter the size of the multitudes: ";
+    cout << "Enter the size of the multitude: ";
 
     cin >> sizeOfMultitude;
 
@@ -113,7 +113,7 @@ void findUnion(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA[], int
     }
     for (int i = 0; i < index; i++)
     {
-        cout << mergedArray[i];
+        cout << mergedArray[i]<<" ";
     }
 
 }
@@ -152,6 +152,27 @@ void isASubMultitude(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA[
     }
 }
 
+void showIsItEqual(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA[], int multitudeB[])
+{
+    int equalCheck=0;
+    for (int i = 0; i < sizeOfMultitudeA; i++)
+    {
+        for (int j = 0; j < sizeOfMultitudeB; j++)
+        {
+            if (multitudeA[i] == multitudeB[j])
+            {
+                equalCheck++;
+            }
+        }
+    }
+    if (equalCheck == sizeOfMultitudeA)
+    {
+        cout << "Yes" << endl;
+    }
+    else {
+        cout << "No" << endl;
+    }
+}
 
 bool mainMenu(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA[], int multitudeB[])
 {
@@ -198,6 +219,7 @@ bool mainMenu(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA[], int 
         return true;
         break;
     case 7:
+        showIsItEqual(sizeOfMultitudeA, sizeOfMultitudeB, multitudeA, multitudeB);
         return true;
         break;
     case 8:
@@ -215,7 +237,7 @@ int main()
     multitudeA = new int[sizeOfMultitudeA];
     inputMultitudeElements(multitudeA, sizeOfMultitudeA);
     cout << endl;
-    sizeOfMultitudeB = sizeOfMultitudeA;
+    sizeOfMultitudeB = inputSize();
     multitudeB = new int[sizeOfMultitudeB];
     inputMultitudeElements(multitudeB, sizeOfMultitudeB);
     do { exit = mainMenu(sizeOfMultitudeA, sizeOfMultitudeB, multitudeA, multitudeB); } while (exit != false);
