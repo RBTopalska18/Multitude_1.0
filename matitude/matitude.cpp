@@ -113,7 +113,7 @@ void findUnion(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA[], int
     }
     for (int i = 0; i < index; i++)
     {
-        cout << mergedArray[i]<<" ";
+        cout << mergedArray[i] << " ";
     }
 
 }
@@ -154,7 +154,7 @@ void isASubMultitude(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA[
 
 void showIsItEqual(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA[], int multitudeB[])
 {
-    int equalCheck=0;
+    int equalCheck = 0;
     for (int i = 0; i < sizeOfMultitudeA; i++)
     {
         for (int j = 0; j < sizeOfMultitudeB; j++)
@@ -174,6 +174,77 @@ void showIsItEqual(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA[],
     }
 }
 
+int checkPrime(int multitudeElement) {
+    if (multitudeElement <= 1)
+    {
+        return 0;
+    }
+    for (int j = 2; j <= multitudeElement / 2; j++) {
+        if (multitudeElement % j == 0) {
+            return 0;
+        }
+        return 1;
+    }
+}
+
+void haveSomethingInCommon(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA[], int multitudeB[])
+{
+    int oddNumbers = 0, evenNumbers = 0;
+    int multitudeSum = 0;
+    cout << "Are they the same: ";
+    showIsItEqual(sizeOfMultitudeA, sizeOfMultitudeB, multitudeA, multitudeB);
+    cout << endl;
+    for (int i = 0; i < sizeOfMultitudeA; i++)
+    {
+        if (multitudeA[i] % 2 == 0) {
+            evenNumbers++;
+        }
+        else {
+            oddNumbers++;
+        }
+    }
+    cout << "In multitude A there are " << oddNumbers << " odd numbers and " << evenNumbers << " even numbers" << endl;
+    evenNumbers = 0;
+    oddNumbers = 0;
+    for (int i = 0; i < sizeOfMultitudeB; i++)
+    {
+        if (multitudeB[i] % 2 == 0) {
+            evenNumbers++;
+        }
+        else {
+            oddNumbers++;
+        }
+    }
+    cout << "In multitude B there are " << oddNumbers << " odd numbers and " << evenNumbers << " even numbers" << endl;
+    for (int i = 0; i < sizeOfMultitudeA; i++)
+    {
+        multitudeSum += multitudeA[i];
+    }
+    cout << "The sum of all elements in multitude A is: " << multitudeSum << endl;
+    multitudeSum = 0;
+    for (int i = 0; i < sizeOfMultitudeB; i++)
+    {
+        multitudeSum += multitudeB[i];
+    }
+    cout << "The sum of all elements in multitude B is: " << multitudeSum << endl;
+    int primeCount = 0;
+    int isprime = 0;
+    for (int i = 0; i < sizeOfMultitudeA; i++) {
+        isprime = checkPrime(multitudeA[i]);
+        if (isprime == 1)
+            primeCount++;
+    }
+    cout << "There is/are: " << primeCount << " in multitude A" << endl;
+    primeCount = 0;
+    isprime = 0;
+    for (int i = 0; i < sizeOfMultitudeB; i++) {
+        isprime = checkPrime(multitudeB[i]);
+        if (isprime == 1)
+            primeCount++;
+    }
+    cout << "There is/are: " << primeCount << " in multitude B" << endl;
+}
+
 bool mainMenu(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA[], int multitudeB[])
 {
     cout << endl;
@@ -181,10 +252,9 @@ bool mainMenu(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA[], int 
     cout << "2. Intersection of two multitudes" << endl;
     cout << "3. Union of two multitudes" << endl;
     cout << "4. Symetrical difference between two multitudes" << endl;
-    cout << "5. Difference between two multitudes" << endl;
-    cout << "6. Show if multitude A is a submultitude B " << endl;
-    cout << "7. Show if multitude A is equal to multitude B" << endl;
-    cout << "8. Show if multitude A have something it common with multitude B " << endl;
+    cout << "5. Show if multitude A is a submultitude B " << endl;
+    cout << "6. Show if multitude A is equal to multitude B" << endl;
+    cout << "7. Show if multitude A have something in common with multitude B " << endl;
     cout << "0. EXIT" << endl << endl;
 
     int option;
@@ -212,17 +282,15 @@ bool mainMenu(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA[], int 
         return true;
         break;
     case 5:
-        return true;
-        break;
-    case 6:
         isASubMultitude(sizeOfMultitudeA, sizeOfMultitudeB, multitudeA, multitudeB);
         return true;
         break;
-    case 7:
+    case 6:
         showIsItEqual(sizeOfMultitudeA, sizeOfMultitudeB, multitudeA, multitudeB);
         return true;
         break;
-    case 8:
+    case 7:
+        haveSomethingInCommon(sizeOfMultitudeA, sizeOfMultitudeB, multitudeA, multitudeB);
         return true;
         break;
     }
@@ -240,7 +308,11 @@ int main()
     sizeOfMultitudeB = inputSize();
     multitudeB = new int[sizeOfMultitudeB];
     inputMultitudeElements(multitudeB, sizeOfMultitudeB);
-    do { exit = mainMenu(sizeOfMultitudeA, sizeOfMultitudeB, multitudeA, multitudeB); } while (exit != false);
+    do
+    {
+        exit = mainMenu(sizeOfMultitudeA, sizeOfMultitudeB, multitudeA, multitudeB);
+    }
+    while (exit != false);
     delete[]multitudeA;
     delete[]multitudeB;
 }
