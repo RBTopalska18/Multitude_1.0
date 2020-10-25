@@ -1,5 +1,7 @@
 #include <iostream>
 #include <cmath>
+#include <algorithm>
+#include <vector>
 using namespace std;
 
 int inputSize()
@@ -245,6 +247,20 @@ void haveSomethingInCommon(int sizeOfMultitudeA, int sizeOfMultitudeB, int multi
     cout << "There is/are: " << primeCount << " in multitude B" << endl;
 }
 
+
+void symetricalDifference(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA[], int multitudeB[]) {
+    vector<int> sDifference(100);
+    vector<int>::iterator sDCount;
+    sort(multitudeA, multitudeA + sizeOfMultitudeA);
+    sort(multitudeB, multitudeB + sizeOfMultitudeB);
+    sDCount = set_symmetric_difference(multitudeA, multitudeA + sizeOfMultitudeA, multitudeB, multitudeB + sizeOfMultitudeB, sDifference.begin());
+    sDifference.resize(sDCount - sDifference.begin());
+    for (sDCount = sDifference.begin(); sDCount != sDifference.end(); sDCount++)
+    {
+        cout <<*sDCount <<" ";
+    }
+}
+
 bool mainMenu(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA[], int multitudeB[])
 {
     cout << endl;
@@ -279,6 +295,7 @@ bool mainMenu(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA[], int 
         return true;
         break;
     case 4:
+        symetricalDifference(sizeOfMultitudeA, sizeOfMultitudeB, multitudeA, multitudeB);
         return true;
         break;
     case 5:
