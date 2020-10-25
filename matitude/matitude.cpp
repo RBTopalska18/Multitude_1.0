@@ -14,6 +14,7 @@ int inputSize()
 
     cout << endl;
 
+
     return sizeOfMultitude;
 }
 
@@ -263,14 +264,17 @@ void symetricalDifference(int sizeOfMultitudeA, int sizeOfMultitudeB, int multit
 
 bool mainMenu(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA[], int multitudeB[])
 {
+
+
+
+    label:
     cout << endl;
-    cout << "1. Enter multitude A and multitude B" << endl;
-    cout << "2. Intersection of two multitudes" << endl;
-    cout << "3. Union of two multitudes" << endl;
-    cout << "4. Symetrical difference between two multitudes" << endl;
-    cout << "5. Show if multitude A is a submultitude B " << endl;
-    cout << "6. Show if multitude A is equal to multitude B" << endl;
-    cout << "7. Show if multitude A have something in common with multitude B " << endl;
+    cout << "1. Intersection of two multitudes" << endl;
+    cout << "2. Union of two multitudes" << endl;
+    cout << "3. Symetrical difference between two multitudes" << endl;
+    cout << "4. Show if multitude A is a submultitude B " << endl;
+    cout << "5. Show if multitude A is equal to multitude B" << endl;
+    cout << "6. Show if multitude A have something in common with multitude B " << endl;
     cout << "0. EXIT" << endl << endl;
 
     int option;
@@ -279,37 +283,36 @@ bool mainMenu(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA[], int 
 
     switch (option)
     {
-    case 0:
-        return false;
-        break;
     case 1:
-        cout << "Please enter the both multitudes: " << endl;
-        return true;
-        break;
-    case 2:
         findIntersection(sizeOfMultitudeA, sizeOfMultitudeB, multitudeA, multitudeB);
         return true;
         break;
-    case 3:
+    case 2:
         findUnion(sizeOfMultitudeA, sizeOfMultitudeB, multitudeA, multitudeB);
         return true;
         break;
-    case 4:
+    case 3:
         symetricalDifference(sizeOfMultitudeA, sizeOfMultitudeB, multitudeA, multitudeB);
         return true;
         break;
-    case 5:
+    case 4:
         isASubMultitude(sizeOfMultitudeA, sizeOfMultitudeB, multitudeA, multitudeB);
         return true;
         break;
-    case 6:
+    case 5:
         showIsItEqual(sizeOfMultitudeA, sizeOfMultitudeB, multitudeA, multitudeB);
         return true;
         break;
-    case 7:
+    case 6:
         haveSomethingInCommon(sizeOfMultitudeA, sizeOfMultitudeB, multitudeA, multitudeB);
         return true;
         break;
+    case 0:
+        return false;
+        break;
+    default:
+        cout << "Incorrect input try again" << endl;
+        goto label;
     }
 }
 
