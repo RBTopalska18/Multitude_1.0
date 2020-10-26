@@ -7,9 +7,7 @@ using namespace std;
 void greeting()
 {
     cout << "|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_* Welcome to our program! *_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|" << endl;
-
-
-
+    cout << endl;
 }
 int inputSize()
 {
@@ -273,7 +271,7 @@ bool mainMenu(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA[], int 
 {
 
 
-
+    cout << endl;
     label:
     cout << endl;
     cout << "|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|" <<endl;
