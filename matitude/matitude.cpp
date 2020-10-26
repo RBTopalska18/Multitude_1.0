@@ -4,6 +4,13 @@
 #include <vector>
 using namespace std;
 
+void greeting()
+{
+    cout << "|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_* Welcome to our program! *_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|" << endl;
+
+
+
+}
 int inputSize()
 {
     int sizeOfMultitude;
@@ -269,14 +276,17 @@ bool mainMenu(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA[], int 
 
     label:
     cout << endl;
-    cout << "1. Intersection of two multitudes" << endl;
-    cout << "2. Union of two multitudes" << endl;
-    cout << "3. Symetrical difference between two multitudes" << endl;
-    cout << "4. Show if multitude A is a submultitude B " << endl;
-    cout << "5. Show if multitude A is equal to multitude B" << endl;
-    cout << "6. Show if multitude A have something in common with multitude B " << endl;
-    cout << "0. EXIT" << endl << endl;
-
+    cout << "|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|" <<endl;
+    cout << "|_|                                                                                                 |_|" << endl;
+    cout << "|_| 1. Intersection of two multitudes                                                               |_|" << endl;
+    cout << "|_| 2. Union of two multitudes                                                                      |_|" << endl;
+    cout << "|_| 3. Symetrical difference between two multitudes                                                 |_|" << endl;
+    cout << "|_| 4. Show if multitude A is a submultitude B                                                      |_|" << endl;
+    cout << "|_| 5. Show if multitude A is equal to multitude B                                                  |_|" << endl;
+    cout << "|_| 6. Show if multitude A have something in common with multitude B                                |_|" << endl;
+    cout << "|_| 0. EXIT                                                                                         |_|" << endl;
+    cout << "|_|                                                                                                 |_|" << endl;
+    cout << "|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|" << endl;
     int option;
     cout << "Please enter the option you'd like to use: ";
     cin >> option;
@@ -321,6 +331,7 @@ int main()
 {
     int sizeOfMultitudeA, sizeOfMultitudeB, * multitudeA, * multitudeB;
     bool exit = true;
+    greeting();
     sizeOfMultitudeA = inputSize();
     multitudeA = new int[sizeOfMultitudeA];
     inputMultitudeElements(multitudeA, sizeOfMultitudeA);
