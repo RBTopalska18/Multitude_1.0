@@ -33,8 +33,7 @@ void inputMultitudeElements(int multitude[], int sizeOfMultitude)
 }
 
 void findIntersection(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA[], int multitudeB[]) {
-    cout << endl;
-    cout << "The intersection/s is/are: ";
+    cout << "The intersection is: ";
     int areThereAnyIntersectionsInMultitudeA = 0;
     int areThereAnyIntersectionsInMultitudeB = 0;
     int* indexOfTheIntersectionA;
@@ -87,7 +86,6 @@ void findIntersection(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA
 
 
 void findUnion(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA[], int multitudeB[]) {
-    cout << endl;
     int temp, count = 0, index = 0, intersectionCount = 0;
     int* mergedArray;
     for (int i = 0; i < sizeOfMultitudeA; i++)
@@ -119,6 +117,7 @@ void findUnion(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA[], int
     {
         mergedArray[index++] = multitudeB[i];
     }
+    cout << "The union is: ";
     for (int i = 0; i < index; i++)
     {
         cout << mergedArray[i] << " ";
@@ -173,12 +172,12 @@ void showIsItEqual(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA[],
             }
         }
     }
-    if (equalCheck == sizeOfMultitudeA)
+    if (equalCheck == sizeOfMultitudeA && sizeOfMultitudeA==sizeOfMultitudeB)
     {
-        cout << "Yes" << endl;
+        cout << "The multitudes are equal!" << endl;
     }
     else {
-        cout << "No" << endl;
+        cout << "The multitudes are not equal!" << endl;
     }
 }
 
@@ -199,7 +198,6 @@ void haveSomethingInCommon(int sizeOfMultitudeA, int sizeOfMultitudeB, int multi
 {
     int oddNumbers = 0, evenNumbers = 0;
     int multitudeSum = 0;
-    cout << "Are they the same: ";
     showIsItEqual(sizeOfMultitudeA, sizeOfMultitudeB, multitudeA, multitudeB);
     cout << endl;
     for (int i = 0; i < sizeOfMultitudeA; i++)
@@ -223,11 +221,13 @@ void haveSomethingInCommon(int sizeOfMultitudeA, int sizeOfMultitudeB, int multi
             oddNumbers++;
         }
     }
+    cout << endl;
     cout << "In multitude B there are " << oddNumbers << " odd numbers and " << evenNumbers << " even numbers" << endl;
     for (int i = 0; i < sizeOfMultitudeA; i++)
     {
         multitudeSum += multitudeA[i];
     }
+    cout << endl;
     cout << "The sum of all elements in multitude A is: " << multitudeSum << endl;
     multitudeSum = 0;
     for (int i = 0; i < sizeOfMultitudeB; i++)
@@ -242,6 +242,7 @@ void haveSomethingInCommon(int sizeOfMultitudeA, int sizeOfMultitudeB, int multi
         if (isprime == 1)
             primeCount++;
     }
+    cout << endl;
     cout << "There is/are: " << primeCount << " in multitude A" << endl;
     primeCount = 0;
     isprime = 0;
@@ -261,6 +262,7 @@ void symetricalDifference(int sizeOfMultitudeA, int sizeOfMultitudeB, int multit
     sort(multitudeB, multitudeB + sizeOfMultitudeB);
     sDCount = set_symmetric_difference(multitudeA, multitudeA + sizeOfMultitudeA, multitudeB, multitudeB + sizeOfMultitudeB, sDifference.begin());
     sDifference.resize(sDCount - sDifference.begin());
+    cout << "The simetric difference is: ";
     for (sDCount = sDifference.begin(); sDCount != sDifference.end(); sDCount++)
     {
         cout <<*sDCount <<" ";
@@ -285,9 +287,11 @@ bool mainMenu(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA[], int 
     cout << "|_| 0. EXIT                                                                                         |_|" << endl;
     cout << "|_|                                                                                                 |_|" << endl;
     cout << "|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|" << endl;
+    cout << endl;
     int option;
     cout << "Please enter the option you'd like to use: ";
     cin >> option;
+    cout << endl;
 
     switch (option)
     {
