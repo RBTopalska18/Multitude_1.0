@@ -12,15 +12,20 @@ void greeting()
 int inputSize()
 {
     int sizeOfMultitude;
-
+    cout << endl;
     cout << "Enter the size of the multitude: ";
 
     cin >> sizeOfMultitude;
 
-    cout << endl;
-
-
-    return sizeOfMultitude;
+    if (sizeOfMultitude <= 0)
+    {
+        cout << "The size of the multitude should be a positive number!" << endl;
+        inputSize();
+    }
+    else
+    {
+        return sizeOfMultitude;
+    }
 }
 
 void inputMultitudeElements(int multitude[], int sizeOfMultitude)
