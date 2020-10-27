@@ -9,7 +9,7 @@ void greeting()
     cout << "|_|_|_|_|_|_|_|_* Welcome to our program! *_|_|_|_|_|_|_|_|" << endl;
     cout << endl;
 }
-
+   
 int inputSize()
 {
     int sizeOfMultitude;

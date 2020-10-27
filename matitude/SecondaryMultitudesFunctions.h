@@ -18,7 +18,7 @@ void isASubMultitude(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA[
     }
     if (sizeOfMultitudeB == sizeOfMultitudeA && sizeOfMultitudeA == isASub)
     {
-        cout << "The multitudes are equal";
+        cout << "The multitudes are equal!";
         cout << endl;
     }
     else if (isASub == sizeOfMultitudeB)
@@ -100,7 +100,6 @@ void haveSomethingInCommon(int sizeOfMultitudeA, int sizeOfMultitudeB, int multi
             oddNumbers++;
         }
     }
-    cout << endl;
     cout << "In multitude B there are " << oddNumbers << " odd numbers and " << evenNumbers << " even numbers" << endl;
     for (int i = 0; i < sizeOfMultitudeA; i++)
     {

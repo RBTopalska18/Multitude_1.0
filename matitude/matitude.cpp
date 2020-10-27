@@ -7,10 +7,8 @@
 #include "SecondaryMultitudesFunctions.h"
 using namespace std;
 
-
 bool mainMenu(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA[], int multitudeB[])
 {
-
 
     cout << endl;
 label:
@@ -22,7 +20,7 @@ label:
     cout << "| 3. Symetrical difference between two multitudes                 |" << endl;
     cout << "| 4. Show if multitude A is a submultitude B                      |" << endl;
     cout << "| 5. Show if multitude A is equal to multitude B                  |" << endl;
-    cout << "| 6. Show if multitude A have something in common with multitude B|" << endl;
+    cout << "| 6. Show if multitude A has something in common with multitude B |" << endl;
     cout << "| 0. EXIT                                                         |" << endl;
     cout << "|                                                                 |" << endl;
     cout << "|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|" << endl;
@@ -66,7 +64,6 @@ label:
         goto label;
     }
 }
-
 
 int main()
 {
