@@ -4,9 +4,11 @@
 #include <vector>
 using namespace std;
 
+//a function that will check if there are any sub multitudes
 void isASubMultitude(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA[], int multitudeB[]) {
 
     int isASub = 0;
+    //a loop for finding how many common elements there are
     for (int i = 0; i < sizeOfMultitudeA; i++)
     {
         for (int j = 0; j < sizeOfMultitudeB; j++)
@@ -17,8 +19,8 @@ void isASubMultitude(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA[
             }
         }
     }
-
-    else if (sizeOfMultitudeB == sizeOfMultitudeA && sizeOfMultitudeA == isASub)
+    
+    if (sizeOfMultitudeB == sizeOfMultitudeA && sizeOfMultitudeA == isASub) //checks if the multitudes are equal and equal to isASub
     {
         cout << "The multitudes are equal!";
         cout << endl;
@@ -40,10 +42,11 @@ void isASubMultitude(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA[
     }
 
 }
-
+//a function that will check if the multitudes are equal
 void showIsItEqual(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA[], int multitudeB[])
 {
     int equalCheck = 0;
+    //find how many common elements are there 
     for (int i = 0; i < sizeOfMultitudeA; i++)
     {
         for (int j = 0; j < sizeOfMultitudeB; j++)
@@ -63,6 +66,7 @@ void showIsItEqual(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA[],
     }
 }
 
+//a function that will check if the multitude elements are prime numbers
 int checkPrime(int multitudeElement) {
     if (multitudeElement <= 1)
     {
@@ -76,6 +80,8 @@ int checkPrime(int multitudeElement) {
     }
 }
 
+//a function that shows the user how many odd and even numbers are in each of the multitudes, what is the sum of every element in the multitude
+//and shows the number of prime numbers 
 void haveSomethingInCommon(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA[], int multitudeB[])
 {
     int oddNumbers = 0, evenNumbers = 0;
