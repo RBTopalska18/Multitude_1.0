@@ -3,8 +3,8 @@
 #include <algorithm>
 #include <vector>
 #include "inputMultutudes.h"
-#include "mainMultitudesFunctions.h"
-#include "SecondaryMultitudesFunctions.h"
+#include "mainMultitudeFunctions.h"
+#include "secondaryMultitudeFunctions.h"
 using namespace std;
 
 bool mainMenu(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA[], int multitudeB[])
@@ -61,7 +61,7 @@ label:
         break;
     default:
         cout << "Incorrect input try again" << endl;
-        goto label;
+        goto label; //return back to the start of the function
     }
 }
 
@@ -81,6 +81,6 @@ int main()
     {
         exit = mainMenu(sizeOfMultitudeA, sizeOfMultitudeB, multitudeA, multitudeB);
     } while (exit != false);
-    delete[]multitudeA;
-    delete[]multitudeB;
+    delete[]multitudeA; //delete the memory of multitudeA
+    delete[]multitudeB; //delete the memory of multitudeB
 }
