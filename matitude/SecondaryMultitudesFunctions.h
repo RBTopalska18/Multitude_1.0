@@ -5,6 +5,7 @@
 using namespace std;
 
 void isASubMultitude(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA[], int multitudeB[]) {
+
     int isASub = 0;
     for (int i = 0; i < sizeOfMultitudeA; i++)
     {
@@ -16,7 +17,8 @@ void isASubMultitude(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA[
             }
         }
     }
-    if (sizeOfMultitudeB == sizeOfMultitudeA && sizeOfMultitudeA == isASub)
+
+    else if (sizeOfMultitudeB == sizeOfMultitudeA && sizeOfMultitudeA == isASub)
     {
         cout << "The multitudes are equal!";
         cout << endl;
@@ -36,6 +38,7 @@ void isASubMultitude(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA[
         cout << "There are no sub multitudes";
         cout << endl;
     }
+
 }
 
 void showIsItEqual(int sizeOfMultitudeA, int sizeOfMultitudeB, int multitudeA[], int multitudeB[])
