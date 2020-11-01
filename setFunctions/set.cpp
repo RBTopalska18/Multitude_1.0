@@ -2,9 +2,9 @@
 #include <cmath>
 #include <algorithm>
 #include <vector>
-#include "inputMultutudes.h"
-#include "mainMultitudeFunctions.h"
-#include "secondaryMultitudeFunctions.h"
+#include "inputSets.h"
+#include "mainSetFunctions.h"
+#include "secondarySetFunctions.h"
 using namespace std;
 
 bool mainMenu(int sizeOfSetA, int sizeOfSetB, int setA[], int setB[])

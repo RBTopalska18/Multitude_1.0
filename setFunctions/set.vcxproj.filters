@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="matitude.cpp">
+    <ClCompile Include="set.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
