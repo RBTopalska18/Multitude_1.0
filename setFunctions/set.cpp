@@ -10,9 +10,7 @@ using namespace std;
 
 bool mainMenu(int sizeOfSetA, int sizeOfSetB, int setA[], int setB[])
 {
-
     cout << endl;
-label:
     cout << endl;
     cout << "|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|" << endl;
     cout << "|                                                                 |" << endl;
@@ -31,7 +29,6 @@ label:
     cout << "Please enter the option you'd like to use: ";
     cin >> option;
     cout << endl;
-
     switch (option)
     {
     case 1:
@@ -74,7 +71,7 @@ label:
         break;
     default:
         cout << "Incorrect input try again" << endl;
-        goto label; //return back to the start of the function
+        mainMenu(sizeOfSetA, sizeOfSetB, setA, setB);
     }
 }
 
