@@ -106,13 +106,13 @@ void findUnion(int sizeOfSetA, int sizeOfSetB, int setA[], int setB[]) {
 
 }
 
-//a function that finds symetrical difference between the sets
-void symetricalDifference(int sizeOfSetA, int sizeOfSetB, int setA[], int setB[]) {
+//a function that finds symmetric difference between the sets
+void symmetricDifference(int sizeOfSetA, int sizeOfSetB, int setA[], int setB[]) {
     vector<int> sDifference(100);
     vector<int>::iterator sDCount;
     sort(setA, setA + sizeOfSetA); //sorting set A
     sort(setB, setB + sizeOfSetB); //sorting set B
-    sDCount = set_symmetric_difference(setA, setA + sizeOfSetA, setB, setB + sizeOfSetB, sDifference.begin());//finding symetrical difference
+    sDCount = set_symmetric_difference(setA, setA + sizeOfSetA, setB, setB + sizeOfSetB, sDifference.begin());//finding symmetric difference
     sDifference.resize(sDCount - sDifference.begin()); 
     cout << "The simetric difference is: ";
     //printing the intersection
@@ -121,15 +121,16 @@ void symetricalDifference(int sizeOfSetA, int sizeOfSetB, int setA[], int setB[]
         cout << *sDCount << " ";
     }
 }
-
+//a function that find the difference of set A and B (A/B)
 void findDifferenceOfSetA(int sizeOfSetA, int sizeOfSetB, int setA[], int setB[])
 {
     int* newSetA;
     newSetA = new int[sizeOfSetA];
     int counterDifferenceElements = 0;
     int* differenceArray;
-    differenceArray = new int[sizeOfSetA];
-
+    differenceArray = new int[sizeOfSetA]; 
+    
+    //a loop that zeroes the intersection
     for (int i = 0; i < sizeOfSetA; i++)
     {
         newSetA[i] = setA[i];
@@ -141,6 +142,8 @@ void findDifferenceOfSetA(int sizeOfSetA, int sizeOfSetB, int setA[], int setB[]
             }
         }
     }
+
+    //a loop that checks which elements are not 0 and if they are not that means they are the difference between the sets
     for (int i = 0; i < sizeOfSetA; i++)
     {
         if (newSetA[i] != 0)
@@ -149,13 +152,14 @@ void findDifferenceOfSetA(int sizeOfSetA, int sizeOfSetB, int setA[], int setB[]
         }
     }
     cout << "The difference of set A has " << counterDifferenceElements << " elements: ";
-    for (int i = 0; i < counterDifferenceElements; i++)
+    for (int i = 0; i < counterDifferenceElements; i++)//a loop that prints the difference between the sets
     {
         cout << differenceArray[i] << " ";
     }
     cout << endl;
 }
 
+//a function that find the difference of set B and A (B/A)
 void findDifferenceOfSetB(int sizeOfSetA, int sizeOfSetB, int setA[], int setB[])
 {
     int* newSetB;
@@ -164,6 +168,7 @@ void findDifferenceOfSetB(int sizeOfSetA, int sizeOfSetB, int setA[], int setB[]
     int* differenceArray;
     differenceArray = new int[sizeOfSetB];
 
+    //a loop that zeroes the intersection
     for (int i = 0; i < sizeOfSetB; i++)
     {
         newSetB[i] = setB[i];
@@ -175,6 +180,8 @@ void findDifferenceOfSetB(int sizeOfSetA, int sizeOfSetB, int setA[], int setB[]
             }
         }
     }
+
+    //a loop that checks which elements are not 0 and if they are not that means they are the difference between the sets
     for (int i = 0; i < sizeOfSetB; i++)
     {
         if (newSetB[i] != 0)
@@ -183,6 +190,8 @@ void findDifferenceOfSetB(int sizeOfSetA, int sizeOfSetB, int setA[], int setB[]
         }
     }
     cout << "The difference of set B has " << counterDifferenceElements << " elements: ";
+
+    //a loop that prints the difference between the sets
     for (int i = 0; i < counterDifferenceElements; i++)
     {
         cout << differenceArray[i] << " ";

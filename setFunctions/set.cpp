@@ -17,7 +17,7 @@ bool mainMenu(int sizeOfSetA, int sizeOfSetB, int setA[], int setB[])
     cout << "| 1. Intersection of two sets                                     |" << endl;
     cout << "| 2. Union of two sets                                            |" << endl;
     cout << "| 3. Subtraction of two sets                                      |" << endl;
-    cout << "| 4. Symetrical difference between two sets                       |" << endl;
+    cout << "| 4. Symmetric difference between two sets                        |" << endl;
     cout << "| 5. Show if set A is a subset B                                  |" << endl;
     cout << "| 6. Show if set A is equal to set B                              |" << endl;
     cout << "| 7. Show if set A has something in common with set B             |" << endl;
@@ -49,8 +49,8 @@ bool mainMenu(int sizeOfSetA, int sizeOfSetB, int setA[], int setB[])
         return true;
         break;
     case 4:
-        symetricalDifference1();
-        symetricalDifference(sizeOfSetA, sizeOfSetB, setA, setB);
+        symmetricDifference1();
+        symmetricDifference(sizeOfSetA, sizeOfSetB, setA, setB);
         return true;
         break;
     case 5:

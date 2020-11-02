@@ -27,7 +27,7 @@ void Union()
 	cout << endl;
 }
 
-void symetricalDifference1()
+void symmetricDifference1()
 {
 	cout << endl;
 	cout << "   **********************" << endl;
@@ -42,37 +42,37 @@ void symetricalDifference1()
 void differenceA()
 {
 	cout << endl;
-	cout << "   ************           *" << endl;
+	cout << "   *************************" << endl;
 	cout << " ************  *            *" << endl;
 	cout << "************    *            *" << endl;
 	cout << "************    *            *" << endl;
 	cout << "************    *            *" << endl;
 	cout << " ************  *            *" << endl;
-	cout << "   ************           *" << endl;
+	cout << "   *************************" << endl;
 	cout << endl;
 }
 void differenceB()
 {
 
 	cout << endl;
-	cout << "   *           ************" << endl;
+	cout << "  **************************" << endl;
 	cout << " *            *  ************" << endl;
 	cout << "*            *    ************" << endl;
 	cout << "*            *    ************" << endl;
 	cout << "*            *    ************" << endl;
 	cout << " *            *  ************" << endl;
-	cout << "   *           ************" << endl;
+	cout << "  **************************" << endl;
 	cout << endl;
 }
 void subset()
 {
 	cout << endl;
-	cout << "   ***********" << endl;
-	cout << " *        *    *" << endl;
-	cout << "*      *******  *" << endl;
-	cout << "*     ********* *" << endl;
-	cout << "*      *******  *" << endl;
-	cout << " *        *    *" << endl;
-	cout << "   ***********" << endl;
+	cout << "   ***************" << endl;
+	cout << " *		  ***       *" << endl;
+	cout << "*      *******      *" << endl;
+	cout << "*     *********     *" << endl;
+	cout << "*      *******      *" << endl;
+	cout << " *       ***       *" << endl;
+	cout << "   ***************" << endl;
 	cout << endl;
 }
