@@ -17,10 +17,11 @@ label:
     cout << "|                                                                 |" << endl;
     cout << "| 1. Intersection of two sets                                     |" << endl;
     cout << "| 2. Union of two sets                                            |" << endl;
-    cout << "| 3. Symetrical difference between two sets                       |" << endl;
-    cout << "| 4. Show if set A is a subset B                                  |" << endl;
-    cout << "| 5. Show if set A is equal to set B                              |" << endl;
-    cout << "| 6. Show if set A has something in common with set B             |" << endl;
+    cout << "| 3. Subtraction of two sets                                      |" << endl;
+    cout << "| 4. Symetrical difference between two sets                       |" << endl;
+    cout << "| 5. Show if set A is a subset B                                  |" << endl;
+    cout << "| 6. Show if set A is equal to set B                              |" << endl;
+    cout << "| 7. Show if set A has something in common with set B             |" << endl;
     cout << "| 0. EXIT                                                         |" << endl;
     cout << "|                                                                 |" << endl;
     cout << "|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|" << endl;
@@ -41,18 +42,23 @@ label:
         return true;
         break;
     case 3:
-        symetricalDifference(sizeOfSetA, sizeOfSetB, setA, setB);
+        findDifferenceOfSetA(sizeOfSetA, sizeOfSetB, setA, setB);
+        findDifferenceOfSetB(sizeOfSetA, sizeOfSetB, setA, setB);
         return true;
         break;
     case 4:
-        isASubSet(sizeOfSetA, sizeOfSetB, setA, setB);
+        symetricalDifference(sizeOfSetA, sizeOfSetB, setA, setB);
         return true;
         break;
     case 5:
-        showIsItEqual(sizeOfSetA, sizeOfSetB, setA, setB);
+        isASubSet(sizeOfSetA, sizeOfSetB, setA, setB);
         return true;
         break;
     case 6:
+        showIsItEqual(sizeOfSetA, sizeOfSetB, setA, setB);
+        return true;
+        break;
+    case 7:
         haveSomethingInCommon(sizeOfSetA, sizeOfSetB, setA, setB);
         return true;
         break;

@@ -6,7 +6,7 @@ using namespace std;
 
 //a function that finds an intersection between set A and B
 void findIntersection(int sizeOfSetA, int sizeOfSetB, int setA[], int setB[]) {
-    cout << "The intersection is: ";
+    cout << "The intersection(A ? B) is: ";
     int areThereAnyIntersectionsInSetA = 0;
     int areThereAnyIntersectionsInSetB = 0;
     int* indexOfTheIntersectionA;
@@ -97,7 +97,7 @@ void findUnion(int sizeOfSetA, int sizeOfSetB, int setA[], int setB[]) {
     {
         mergedArray[index++] = setB[i];
     }
-    cout << "The union is: ";
+    cout << "The union(A ? B) is: ";
     //printing the unions
     for (int i = 0; i < index; i++) 
     {
@@ -120,4 +120,72 @@ void symetricalDifference(int sizeOfSetA, int sizeOfSetB, int setA[], int setB[]
     {
         cout << *sDCount << " ";
     }
+}
+
+void findDifferenceOfSetA(int sizeOfSetA, int sizeOfSetB, int setA[], int setB[])
+{
+    int* newSetA;
+    newSetA = new int[sizeOfSetA];
+    int counterDifferenceElements = 0;
+    int* differenceArray;
+    differenceArray = new int[sizeOfSetA];
+
+    for (int i = 0; i < sizeOfSetA; i++)
+    {
+        newSetA[i] = setA[i];
+        for (int j = 0; j < sizeOfSetB; j++)
+        {
+            if (newSetA[i] == setB[j])
+            {
+                newSetA[i] = 0;
+            }
+        }
+    }
+    for (int i = 0; i < sizeOfSetA; i++)
+    {
+        if (newSetA[i] != 0)
+        {
+            differenceArray[counterDifferenceElements++] = newSetA[i];
+        }
+    }
+    cout << "The difference of set A has " << counterDifferenceElements << " elements: ";
+    for (int i = 0; i < counterDifferenceElements; i++)
+    {
+        cout << differenceArray[i] << " ";
+    }
+    cout << endl;
+}
+
+void findDifferenceOfSetB(int sizeOfSetA, int sizeOfSetB, int setA[], int setB[])
+{
+    int* newSetB;
+    newSetB = new int[sizeOfSetB];
+    int counterDifferenceElements = 0;
+    int* differenceArray;
+    differenceArray = new int[sizeOfSetB];
+
+    for (int i = 0; i < sizeOfSetB; i++)
+    {
+        newSetB[i] = setB[i];
+        for (int j = 0; j < sizeOfSetA; j++)
+        {
+            if (newSetB[i] == setA[j])
+            {
+                newSetB[i] = 0;
+            }
+        }
+    }
+    for (int i = 0; i < sizeOfSetB; i++)
+    {
+        if (newSetB[i] != 0)
+        {
+            differenceArray[counterDifferenceElements++] = c[i];
+        }
+    }
+    cout << "The difference of set B has " << counterDifferenceElements << " elements: ";
+    for (int i = 0; i < counterDifferenceElements; i++)
+    {
+        cout << differenceArray[i] << " ";
+    }
+    cout << endl;
 }

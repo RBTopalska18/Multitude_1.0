@@ -130,7 +130,7 @@ void haveSomethingInCommon(int sizeOfSetA, int sizeOfSetB, int setA[], int setB[
             primeCount++;
     }
     cout << endl;
-    cout << "There is/are: " << primeCount << " in set A" << endl;
+    cout << "There is/are: " << primeCount << " prime numbers in set A" << endl;
     primeCount = 0;
     isprime = 0;
     for (int i = 0; i < sizeOfSetB; i++) {
@@ -138,5 +138,5 @@ void haveSomethingInCommon(int sizeOfSetA, int sizeOfSetB, int setA[], int setB[
         if (isprime == 1)
             primeCount++;
     }
-    cout << "There is/are: " << primeCount << " in set B" << endl;
+    cout << "There is/are: " << primeCount << " prime numbers in set B" << endl;
 }
