@@ -27,7 +27,7 @@ void Union()
 	cout << endl;
 }
 
-void symetricalDifference()
+void symetricalDifference1()
 {
 	cout << endl;
 	cout << "   **********************" << endl;

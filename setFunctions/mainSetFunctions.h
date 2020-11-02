@@ -6,7 +6,7 @@ using namespace std;
 
 //a function that finds an intersection between set A and B
 void findIntersection(int sizeOfSetA, int sizeOfSetB, int setA[], int setB[]) {
-    cout << "The intersection(A ? B) is: ";
+    cout << "The intersection is: ";
     int areThereAnyIntersectionsInSetA = 0;
     int areThereAnyIntersectionsInSetB = 0;
     int* indexOfTheIntersectionA;
@@ -97,7 +97,7 @@ void findUnion(int sizeOfSetA, int sizeOfSetB, int setA[], int setB[]) {
     {
         mergedArray[index++] = setB[i];
     }
-    cout << "The union(A ? B) is: ";
+    cout << "The union is: ";
     //printing the unions
     for (int i = 0; i < index; i++) 
     {
@@ -179,7 +179,7 @@ void findDifferenceOfSetB(int sizeOfSetA, int sizeOfSetB, int setA[], int setB[]
     {
         if (newSetB[i] != 0)
         {
-            differenceArray[counterDifferenceElements++] = c[i];
+            differenceArray[counterDifferenceElements++] = newSetB[i];
         }
     }
     cout << "The difference of set B has " << counterDifferenceElements << " elements: ";
@@ -188,4 +188,43 @@ void findDifferenceOfSetB(int sizeOfSetA, int sizeOfSetB, int setA[], int setB[]
         cout << differenceArray[i] << " ";
     }
     cout << endl;
+}
+
+//a function that will check if there are any sub sets
+void isASubSet(int sizeOfSetA, int sizeOfSetB, int setA[], int setB[]) {
+
+    int isASub = 0;
+    //a loop for finding how many common elements there are
+    for (int i = 0; i < sizeOfSetA; i++)
+    {
+        for (int j = 0; j < sizeOfSetB; j++)
+        {
+            if (setA[i] == setB[j])
+            {
+                isASub++;
+            }
+        }
+    }
+
+    if (sizeOfSetB == sizeOfSetA && sizeOfSetA == isASub) //checks if the sets are equal and equal to isASub
+    {
+        cout << "The sets are equal!";
+        cout << endl;
+    }
+    else if (isASub == sizeOfSetB)
+    {
+        cout << "Set B is sub set of set A";
+        cout << endl;
+    }
+    else if (isASub == sizeOfSetA)
+    {
+        cout << "Set A is sub set of set B";
+        cout << endl;
+    }
+    else
+    {
+        cout << "There are no sub sets";
+        cout << endl;
+    }
+
 }

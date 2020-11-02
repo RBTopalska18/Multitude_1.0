@@ -4,44 +4,6 @@
 #include <vector>
 using namespace std;
 
-//a function that will check if there are any sub sets
-void isASubSet(int sizeOfSetA, int sizeOfSetB, int setA[], int setB[]) {
-
-    int isASub = 0;
-    //a loop for finding how many common elements there are
-    for (int i = 0; i < sizeOfSetA; i++)
-    {
-        for (int j = 0; j < sizeOfSetB; j++)
-        {
-            if (setA[i] == setB[j])
-            {
-                isASub++;
-            }
-        }
-    }
-    
-    if (sizeOfSetB == sizeOfSetA && sizeOfSetA == isASub) //checks if the sets are equal and equal to isASub
-    {
-        cout << "The sets are equal!";
-        cout << endl;
-    }
-    else if (isASub == sizeOfSetB)
-    {
-        cout << "Set B is sub set of set A";
-        cout << endl;
-    }
-    else if (isASub == sizeOfSetA)
-    {
-        cout << "Set A is sub set of set B";
-        cout << endl;
-    }
-    else
-    {
-        cout << "There are no sub sets";
-        cout << endl;
-    }
-
-}
 //a function that will check if the sets are equal
 void showIsItEqual(int sizeOfSetA, int sizeOfSetB, int setA[], int setB[])
 {

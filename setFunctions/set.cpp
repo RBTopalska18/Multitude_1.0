@@ -5,6 +5,7 @@
 #include "inputSets.h"
 #include "mainSetFunctions.h"
 #include "secondarySetFunctions.h"
+#include "PresentationLayer.h"
 using namespace std;
 
 bool mainMenu(int sizeOfSetA, int sizeOfSetB, int setA[], int setB[])
@@ -34,23 +35,29 @@ label:
     switch (option)
     {
     case 1:
+        intersection();
         findIntersection(sizeOfSetA, sizeOfSetB, setA, setB);
         return true;
         break;
     case 2:
+        Union();
         findUnion(sizeOfSetA, sizeOfSetB, setA, setB);
         return true;
         break;
     case 3:
+        differenceA();
         findDifferenceOfSetA(sizeOfSetA, sizeOfSetB, setA, setB);
+        differenceB();
         findDifferenceOfSetB(sizeOfSetA, sizeOfSetB, setA, setB);
         return true;
         break;
     case 4:
+        symetricalDifference1();
         symetricalDifference(sizeOfSetA, sizeOfSetB, setA, setB);
         return true;
         break;
     case 5:
+        subset();
         isASubSet(sizeOfSetA, sizeOfSetB, setA, setB);
         return true;
         break;
